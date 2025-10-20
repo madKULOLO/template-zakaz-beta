@@ -130,7 +130,7 @@ var UI = {
             
             var removeBtn = document.createElement('button');
             removeBtn.className = 'remove-btn';
-            removeBtn.innerHTML = '<span class="emoji">❌</span> Выдано / Удалить';
+            removeBtn.innerHTML = '<span class="emoji">❌</span>Удалить';
             removeBtn.onclick = (function(index) {
                 return function() {
                     App.removeOrder(index);
