@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>пупупу - Кассовая система</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🥙 пупупу шаурма</h1>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="order">🛒 Новый заказ</button>
+                <button class="tab-btn" data-tab="history">📋 История заказов</button>
+            </div>
+        </header>
+        
+        <div class="tab-content active" id="order-tab">
+            <div class="main-content">
+                <section class="products-section">
+                    <h2>🛍️ Меню</h2>
+                    <div class="products-grid" id="products-container">
+                    </div>
+                </section>
+                
+                <section class="cart-section">
+                    <h2>🛒 Текущий заказ</h2>
+                    <div id="cart-container">
+                        <p>🛒 Корзина пуста</p>
+                    </div>
+                    <div class="cart-total" id="cart-total">
+                        💰 Итого: 0 ₽
+                    </div>
+                    <div class="cart-actions">
+                        <button class="clear-btn" id="clear-btn">🗑️ Очистить</button>
+                        <button class="checkout-btn" id="checkout-btn">✅ Оформить заказ</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <div class="tab-content" id="history-tab">
+            <section class="order-history">
+                <h2>📋 История заказов</h2>
+                <div class="history-controls">
+                    <button class="clear-btn" id="clear-history-btn">🗑️ Очистить всю историю</button>
+                </div>
+                <div id="order-history-container">
+                    <p>📭 Нет заказов</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
