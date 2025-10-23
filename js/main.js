@@ -69,15 +69,21 @@ var App = {
     selectProduct: function(productId) {
         this.selectedProduct = this.products.find(function(p) { return p.id === productId; });
         
-        if (this.selectedProduct && 
-            (this.selectedProduct.category.indexOf('Шаурма') !== -1 || 
-             this.selectedProduct.category.indexOf('Сосиска') !== -1)) {
-            UI.showToppingsModal(ProductData.getToppings(), this.selectedProduct);
-        } else {
-            this.addToCart(productId);
+        if (this.selectedProduct) {
+            if (this.selectedProduct.category === 'Закуски' && 
+                this.selectedProduct.name.indexOf('Наггетсы') !== -1) {
+                UI.showNuggetsModal(this.selectedProduct);
+            } 
+            else if (this.selectedProduct.category.indexOf('Шаурма') !== -1 || 
+                     this.selectedProduct.category.indexOf('Сосиска') !== -1) {
+                UI.showToppingsModal(ProductData.getToppings(), this.selectedProduct);
+            } 
+            else {
+                this.addToCart(productId);
+            }
         }
     },
-    
+
     addToCart: function(productId) {
         for (var i = 0; i < this.products.length; i++) {
             if (this.products[i].id === productId) {

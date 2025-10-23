@@ -56,6 +56,8 @@ const ProductData = {
             { id: 12, category: 'Шаурма', name: '🌯 🐔 Шаурма с курицей', price: 300, available: true },
             { id: 11, category: 'Шаурма', name: '🌯 🌿 Шаурма вегетарианская', price: 300, available: true },
             { id: 9, category: 'Сосиска в лаваше', name: '🌭 Сосиска в лаваше', price: 200, available: true },
+            { id: 13, category: 'Закуски', name: '🍗 Наггетсы', price: '100-150', available: true },
+            { id: 15, category: 'Закуски', name: '🍟 Картошка фри', price: 130, available: true },
             { id: 1, category: 'напитки', name: '🥤 Чай домашний с облепихой', price: 100, available: true },
             { id: 2, category: 'напитки', name: '🥤 Чай домашний с малиной', price: 100, available: true },
             { id: 3, category: 'напитки', name: '🥤 Чай', price: 50, available: true },

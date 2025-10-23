@@ -252,6 +252,84 @@ var UI = {
         document.body.appendChild(modal);
     },
     
+    showNuggetsModal: function(product) {
+        var existingModal = document.getElementById('toppings-modal');
+        if (existingModal) {
+            document.body.removeChild(existingModal);
+        }
+        
+        var modal = document.createElement('div');
+        modal.id = 'toppings-modal';
+        
+        var modalContent = document.createElement('div');
+        modalContent.className = 'modal-content';
+        
+        var title = document.createElement('h2');
+        title.textContent = 'Выберите количество наггетсов';
+        
+        var optionsGrid = document.createElement('div');
+        optionsGrid.className = 'toppings-grid';
+        
+        var option6 = document.createElement('div');
+        option6.className = 'topping-card';
+        option6.innerHTML = 
+            '<h4>6 шт.</h4>' +
+            '<div>100 ₽</div>';
+        option6.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var productCopy = {
+                id: product.id,
+                name: '🍗 Наггетсы (6 шт.)',
+                price: 100,
+                quantity: 1
+            };
+            Cart.addItem(productCopy);
+            UI.renderCart();
+            App.animateAddToCart();
+            UI.hideToppingsModal();
+        });
+        
+        var option10 = document.createElement('div');
+        option10.className = 'topping-card';
+        option10.innerHTML = 
+            '<h4>10 шт.</h4>' +
+            '<div>150 ₽</div>';
+        option10.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            var productCopy = {
+                id: product.id,
+                name: '🍗 Наггетсы (10 шт.)',
+                price: 150,
+                quantity: 1
+            };
+            Cart.addItem(productCopy);
+            UI.renderCart();
+            App.animateAddToCart();
+            UI.hideToppingsModal();
+        });
+        
+        optionsGrid.appendChild(option6);
+        optionsGrid.appendChild(option10);
+        
+        var cancelButton = document.createElement('button');
+        cancelButton.className = 'clear-btn';
+        cancelButton.textContent = 'Отмена';
+        cancelButton.style.flex = '1';
+        cancelButton.style.marginTop = '20px';
+        cancelButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            UI.hideToppingsModal();
+        });
+        
+        modalContent.appendChild(title);
+        modalContent.appendChild(optionsGrid);
+        modalContent.appendChild(cancelButton);
+        modal.appendChild(modalContent);
+        document.body.appendChild(modal);
+    },
+
     hideToppingsModal: function() {
         var modal = document.getElementById('toppings-modal');
         if (modal) {
