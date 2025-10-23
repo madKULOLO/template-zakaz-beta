@@ -151,9 +151,9 @@ var UI = {
                 productSpan.className = 'order-item-product';
                 if (item.name.indexOf('🌯') !== -1 || item.name.indexOf('🌭') !== -1 || 
                     item.name.indexOf('🥤') !== -1 || item.name.indexOf('☕') !== -1 ||
-                    item.name.indexOf('➕') !== -1) {
+                    item.name.indexOf('➕') !== -1 || item.name.indexOf('🍗') !== -1) {
                     productSpan.innerHTML = item.name;
-
+                } else {
                     productSpan.textContent = item.name;
                 }
                 
